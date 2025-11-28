@@ -294,5 +294,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.deleteCustomer = deleteCustomer;
 
     showSection('dashboard');
-
 });
