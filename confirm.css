@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.confirm-container {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.confirm {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px; 
+    padding: 30px 20px 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.confirm::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(135deg, transparent 50%, #ff8c42 50%); 
+    transform: rotate(15deg) translate(30%, 30%); 
+    z-index: 1;
+}
+
+.confirm h1, .input-group, .confirm-btn {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tiêu đề */
+.confirm h1 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.confirm-name, .confirm-address, .confirm-phone, .confirm-email {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #f0f0f0; 
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+    color: #333;
+}
+
+.confirm-name::placeholder, .confirm-address::placeholder, .confirm-phone::placeholder, .confirm-email::placeholder {
+    color: #999;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #ff7621;
+}

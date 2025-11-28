@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chợ Đồ Cũ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+</head>
+<body>
+    <div id="header">
+        <div class="nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#product-section">Sản Phẩm</a></li>
+                    <li><a href="#footer">Liên Hệ</a></li>
+                </ul>
+            </div>
+            
+            <div class="form">
+                
+                <div id="search-container" class="hidden nav-search-bar">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                    <button id="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="logged-out-nav">
+                    <button class="btn login" type="button"><a href="login.html">Đăng nhập</a></button>
+                    <button class="btn signup" type="button"><a href="signup.html">Đăng ký</a></button>
+                </div>
+
+                <div id="logged-in-nav" style="display: none;">
+                    
+                    <div class="cart-dropdown-container">
+                        <i class="fas fa-shopping-cart icon-cart" id="cart-icon"></i> 
+                        <div class="cart-dropdown-menu" id="cart-dropdown-menu" style="display: none;">
+                            <h3 class="cart-dropdown-title"><i class="fas fa-shopping-bag"></i> Giỏ hàng</h3>
+                            
+                            <div class="cart-items-container">
+                                </div>
+                            
+                            <div class="cart-summary">
+                                <p>Tổng cộng: <span id="cart-total">0đ</span></p>
+                                <button class="btn-checkout-all">Thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu-container">
+                        <i class="fas fa-user-circle user-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="profile.html?tab=info">Thông tin</a></li>
+                            <li><a href="profile.html?tab=orders">Đơn hàng</a></li>
+                            <li><a href="#" id="logout-link">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="banner-container" id="home-section"> 
+            <div class="banner active" style="background-image: url('img/banner/banner1.jpg');"></div>
+            <div class="banner" style="background-image: url('img/banner/banner2.jpg');"></div>
+            <div class="banner" style="background-image: url('img/banner/banner3.jpg');"></div>
+        </div>
+
+        <div id="search-results-section" class="product" style="padding-top: 20px; display: none;">
+            <div class="name-brand" style="max-width: 1200px; margin: 0 auto; padding-left: 40px;">
+                <h1 id="search-results-title" style="margin-left: 0;">Kết quả tìm kiếm</h1>
+            </div>
+            <div class="list-product-grid" id="search-results-list"> 
+                </div>
+            <div id="no-results-message" style="text-align: center; padding: 20px; font-size: 1.1rem; color: #888; display: none;">
+                Không tìm thấy sản phẩm nào khớp với từ khóa của bạn.
+            </div>
+        </div>
+        
+        <div class="hot">
+            <div class="title">
+                <h1>Sản phẩm nổi bật</h1>
+            </div>
+
+            <div class="hot-product">
+                <div class="hot-product-1 ">
+                    <img class="img-hot-product" src="img/asus/asus3.jpg" alt="">
+                    <p class="name"><strong>ROG Strix G16 (G615JMR-S5155W)</strong></p>
+                    <span>Trả góp 0%</span>
+                    <p class="price" data-raw-price="19999999"> <strong>19.999.999đ</strong> </p>
+                    <div class="action">
+                        <button class="More" type="button"><a href="product/asus/asus3.html">Chi Tiết</a></button>
+                        <button class="Add add-to-cart-btn" 
+                                data-id="ASUS3_HOT" 
+                                data-name="ROG Strix G16 (G615JMR-S5155W)" 
+                                data-price="19999999" 
+                                data-img="img/asus/asus3.jpg"
+                                type="button">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                
+                <div class="hot-product-2">
+                    <img class="img-hot-product " src="img/lenovo/lenovo8.webp" alt="">
+                    <p class="name"><strong>Laptop lenovo Legion 5 15IRX10 83LY00HRVN</strong></p>
+                    <span>Trả góp 0%</span>
+                    <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                    <div class="action">
+                        <button class="More" type="button"><a href="product/lenovo/lenovo8.html">Chi Tiết</a></button>
+                        <button class="Add add-to-cart-btn"
+                                data-id="LENOVO8_HOT"
+                                data-name="Laptop lenovo Legion 5 15IRX10 83LY00HRVN"
+                                data-price="19999999" 
+                                data-img="img/lenovo/lenovo8.webp"
+                                type="button">Thêm vào giỏ</button>
+                    </div>
+                </div>
+
+                <div class="hot-product-3">
+                    <img class="img-hot-product " src="img/msi/msi6.webp" alt="">
+                    <p class="name"><strong>Laptop msi Stealth A16 AI+ A3XWFG-018VN</strong></p>
+                    <span>Trả góp 0%</span>
+                    <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                    <div class="action">
+                        <button class="More" type="button"><a href="product/msi/msi6.html">Chi Tiết</a></button>
+                        <button class="Add add-to-cart-btn"
+                                data-id="MSI6_HOT"
+                                data-name="Laptop msi Stealth A16 AI+ A3XWFG-018VN"
+                                data-price="19999999" 
+                                data-img="img/msi/msi6.webp"
+                                type="button">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product" id="product-section"> <div class="name-brand">
+                <h1>▊Asus & ROG</h1>
+            </div>
+
+            <div class="product-carousel-container">
+                
+                <button class="prev-btn" type="button">❮</button>
+
+                <div class="product-view">
+                    
+                    <div class="list-product">
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus1.png" alt="">
+                            <p class="name"><strong>asus ROG Strix G16 G615LR-S5289W</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus1.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS1"
+                                        data-name="asus ROG Strix G16 G615LR-S5289W"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus1.png"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus2.jpg" alt="">
+                            <p class="name"><strong>ROG Strix G16 (G615JPR-S5107W)</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus2.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS2"
+                                        data-name="ROG Strix G16 (G615JPR-S5107W)"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus2.jpg"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus3.jpg" alt="">
+                            <p class="name"><strong>ROG Strix G16 (G615JMR-S5155W)</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus3.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS3_2"
+                                        data-name="ROG Strix G16 (G615JMR-S5155W)"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus3.jpg"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus4.jpg" alt="">
+                            <p class="name"><strong>asus Vivobook 16 A1607QA-MB067WS</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus4.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS4"
+                                        data-name="asus Vivobook 16 A1607QA-MB067WS"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus4.jpg"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus5.jpg" alt="">
+                            <p class="name"><strong>asus Zenbook 14 UM3406KA-PP113WS</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus5.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS5"
+                                        data-name="asus Zenbook 14 UM3406KA-PP113WS"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus5.jpg"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus6.jpg" alt="">
+                            <p class="name"><strong>asus Gaming V16 (K3607VJ-RP092W)</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus6.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS6"
+                                        data-name="asus Gaming V16 (K3607VJ-RP092W)"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus6.jpg"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus7.jpg" alt="">
+                            <p class="name"><strong>asus TUF Gaming A14 (FA401KM-RG010WS)</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus7.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS7"
+                                        data-name="asus TUF Gaming A14 (FA401KM-RG010WS)"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus7.jpg"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus8.png" alt="">
+                            <p class="name"><strong>asus Vivobook S14 M3407</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus8.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS8"
+                                        data-name="asus Vivobook S14 M3407"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus8.png"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/asus/asus9.png" alt="">
+                            <p class="name"><strong>asus Vivobook 14 A1407CA-LY008WS</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/asus/asus9.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="ASUS9"
+                                        data-name="asus Vivobook 14 A1407CA-LY008WS"
+                                        data-price="19999999" 
+                                        data-img="img/asus/asus9.png"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="next-btn" type="button">❯</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="name-brand">
+                <h1>▊lenovo</h1>
+            </div>
+
+            <div class="product-carousel-container">
+                
+                <button class="prev-btn" type="button">❮</button>
+
+                <div class="product-view">
+                    
+                    <div class="list-product">
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo1.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo IdeaPad Slim 3 14IRH10</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo1.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO1"
+                                        data-name="Laptop lenovo IdeaPad Slim 3 14IRH10"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo1.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo2.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo LOQ 15IAX9E 83LK0079VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo2.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO2"
+                                        data-name="Laptop lenovo LOQ 15IAX9E 83LK0079VN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo2.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo3.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo IdeaPad Slim 3 15ABR8 82XM00MDVN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo3.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO3"
+                                        data-name="Laptop lenovo IdeaPad Slim 3 15ABR8 82XM00MDVN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo3.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo4.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo LOQ 15ARP9 83JC00M3VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo4.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO4"
+                                        data-name="Laptop lenovo LOQ 15ARP9 83JC00M3VN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo4.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo5.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo IdeaPad Slim 3 16IRH10 83K20002VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo5.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO5"
+                                        data-name="Laptop lenovo IdeaPad Slim 3 16IRH10 83K20002VN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo5.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo6.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo LOQ 15IRX10 83JE00PEVN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo6.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO6"
+                                        data-name="Laptop lenovo LOQ 15IRX10 83JE00PEVN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo6.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo7.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo IdeaPad Slim 5 14Q8X9 83HL005AVN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo7.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO7"
+                                        data-name="Laptop lenovo IdeaPad Slim 5 14Q8X9 83HL005AVN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo7.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lenovo8.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo Legion 5 15IRX10 83LY00HRVN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo8.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO8_2"
+                                        data-name="Laptop lenovo Legion 5 15IRX10 83LY00HRVN"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lenovo8.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/lenovo/lonovo9.webp" alt="">
+                            <p class="name"><strong>Laptop lenovo ThinkPad L16 Gen 2 21SA000FVA</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/lenovo/lenovo9.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="LENOVO9"
+                                        data-name="Laptop lenovo ThinkPad L16 Gen 2 21SA000FVA"
+                                        data-price="19999999" 
+                                        data-img="img/lenovo/lonovo9.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="next-btn" type="button">❯</button>
+
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="name-brand">
+                <h1>▊MSI</h1>
+            </div>
+
+            <div class="product-carousel-container">
+                
+                <button class="prev-btn" type="button">❮</button>
+
+                <div class="product-view">
+                    
+                    <div class="list-product">
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi1.webp" alt="">
+                            <p class="name"><strong>Laptop msi Katana 15 B13UDXK-2270VN V2</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi1.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI1"
+                                        data-name="Laptop msi Katana 15 B13UDXK-2270VN V2"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi1.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi2.webp" alt="">
+                            <p class="name"><strong>Laptop msi Katana 15 B13VFK-676VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi2.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI2"
+                                        data-name="Laptop msi Katana 15 B13VFK-676VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi2.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi3.webp" alt="">
+                            <p class="name"><strong>Laptop msi Gaming Katana A15 AI B8VE-402VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi3.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI3"
+                                        data-name="Laptop msi Gaming Katana A15 AI B8VE-402VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi3.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi4.webp" alt="">
+                            <p class="name"><strong>Laptop msi Katana 15 HX B14WEK-286VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi4.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI4"
+                                        data-name="Laptop msi Katana 15 HX B14WEK-286VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi4.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi5.webp" alt="">
+                            <p class="name"><strong>Laptop msi Modern 14 C12MO-660VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi5.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI5"
+                                        data-name="Laptop msi Modern 14 C12MO-660VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi5.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi6.webp" alt="">
+                            <p class="name"><strong>Laptop msi Stealth A16 AI+ A3XWFG-018VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi6.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI6_2"
+                                        data-name="Laptop msi Stealth A16 AI+ A3XWFG-018VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi6.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi7.webp" alt="">
+                            <p class="name"><strong>Laptop msi Gaming Thin 15 B13UC-3247VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi7.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI7"
+                                        data-name="Laptop msi Gaming Thin 15 B13UC-3247VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi7.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi8.webp" alt="">
+                            <p class="name"><strong>Laptop msi Modern 14 F13MG-240VNCP</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi8.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI8"
+                                        data-name="Laptop msi Modern 14 F13MG-240VNCP"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi8.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <img class="img-hot-product " src="img/msi/msi9.webp" alt="">
+                            <p class="name"><strong>Laptop msi Gaming Thin 15 B13UC-2081VN</strong></p>
+                            <span>Trả góp 0%</span>
+                            <p class="price" data-raw-price="19999999"><strong>19.999.999đ</strong> </p>
+                            <div class="action">
+                                <button class="More" type="button"><a href="product/msi/msi9.html">Chi Tiết</a></button>
+                                <button class="Add add-to-cart-btn"
+                                        data-id="MSI9"
+                                        data-name="Laptop msi Gaming Thin 15 B13UC-2081VN"
+                                        data-price="19999999" 
+                                        data-img="img/msi/msi9.webp"
+                                        type="button">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="next-btn" type="button">❯</button>
+
+            </div>
+        </div>
+
+        <div class="reliability" id="reliability-section"> <div class="header-reliability">
+                <h1>Vì sao nên chọn chúng tôi?</h1>
+                <p>Nơi mua sắm đáng tin cậy cho mọi nhu cầu công nghệ của bạn.</p>
+            </div>
+            <div class="content-reliability">
+                <div class="reliability-item">
+                    <img src="icon/ship.png" alt="Giao hàng nhanh">
+                    <h2>Giao hàng miễn phí</h2>
+                    <p>Miễn phí giao hàng cho tất cả đơn hàng trên 10 triệu đồng trên toàn quốc.</p>
+                </div>
+                <div class="reliability-item">
+                    <img src="icon/baohanh.png" alt="Sản phẩm chính hãng">
+                    <h2>Bảo hành chính hãng</h2>
+                    <p>Tất cả sản phẩm đều được bảo hành chính hãng từ 12 đến 24 tháng.</p>
+                </div>
+                <div class="reliability-item">
+                    <img src="icon/trahang.png" alt="Đổi trả dễ dàng">
+                    <h2>Đổi trả dễ dàng</h2>
+                    <p>Chính sách đổi trả trong vòng 30 ngày nếu sản phẩm có lỗi từ nhà sản xuất.</p>
+                </div>
+                <div class="reliability-item">
+                    <img src="icon/dongho.png" alt="Giá tốt nhất">
+                    <h2>Hỗ trợ 24/7</h2>
+                    <p>Đội ngũ tư vấn viên luôn sẵn sàng hỗ trợ bạn mọi lúc mọi nơi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" id="contact-section"> <div class="footer-container">
+            <div class="footer-col about">
+                <h3>CHỢ ĐỒ CŨ</h3>
+                <p>Nơi bạn có thể tìm thấy các sản phẩm công nghệ đã qua sử dụng với chất lượng và độ tin cậy cao nhất. Sứ mệnh của chúng tôi là mang lại giá trị bền vững cho khách hàng.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Hỗ trợ khách hàng</h4>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Về chúng tôi</h4>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Sơ đồ trang</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-info">
+                <h4>Liên hệ</h4>
+                <p><strong>Địa chỉ:</strong> 02 Võ Oanh, Phường 25, Q. Bình Thạnh, TP.HCM</p>
+                <p><strong>Điện thoại:</strong> 0392587154</p>
+                <p><strong>Email:</strong> nambt7902@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2025 Chợ Đồ Cũ. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script src="prev-next.js" defer></script>
+    <script src="status.js" defer></script> 
+    <script src="cart.js" defer></script> 
+    <script src="banner.js" defer></script>
+    <script src="search.js" defer></script> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchContainer = document.getElementById('search-container');
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            if (isLoggedIn) {
+                searchContainer.classList.remove('hidden');
+            } else {
+                searchContainer.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

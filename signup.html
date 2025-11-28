@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="signup.js" defer></script> 
+</head>
+<body>
+    <div class="container">
+        
+        <div class="welcome-container">
+            <h2 class="welcome-title">CHÀO MỪNG TRỞ LẠI</h2>
+            <p class="welcome-text">Bạn đã có tài khoản</p>
+            <button class="btn-secondary"><a href="login.html">Đăng nhập</a></button>
+        </div>
+        
+        <div class="form-container">
+            <h2 class="title">ĐĂNG KÝ</h2>
+            
+            <form action="#" method="POST" id="signupForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Tên đăng nhập" id="newUsername"> 
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Mật khẩu" id="newPassword"> 
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Nhập lại mật khẩu" id="confirmPassword">
+                    <i class="fas fa-lock"></i>
+                </div>
+                
+                <button type="submit" class="btn-primary">Đăng Ký</button>
+            </form>
+            
+            <p class="separator-text">Đăng ký bằng cách khác</p>
+            
+            <div class="social-login">
+                <div class="social-icon facebook-icon"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-icon google-icon"><i class="fab fa-google"></i></div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

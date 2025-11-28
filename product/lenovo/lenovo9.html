@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenovo</title>
+    <link rel="stylesheet" href="../css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../../cart.js" defer></script> 
+    <script src="../../status.js" defer></script> 
+</head>
+<body>
+    <div id="header">
+        <div class="nav">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../img/logo.png" alt=""></a>
+            </div>
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="../../index.html">Trang Chủ</a></li>
+                    <li><a href="../../index.html#product-section">Sản Phẩm</a></li>
+                    <li><a href="../../index.html#footer">Liên Hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="form">
+                
+                <div id="logged-out-nav">
+                    <button class="btn login" type="button"><a href="../../login.html">Đăng nhập</a></button>
+                    <button class="btn signup" type="button"><a href="../../signup.html">Đăng ký</a></button>
+                </div>
+
+                <div id="logged-in-nav" style="display: none;">
+                    
+                    <div class="cart-dropdown-container">
+                        <i class="fas fa-shopping-cart icon-cart" id="cart-icon"></i> 
+                        <div class="cart-dropdown-menu" id="cart-dropdown-menu" style="display: none;">
+                            <h3 class="cart-dropdown-title"><i class="fas fa-shopping-bag"></i> Giỏ hàng</h3>
+                            
+                            <div class="cart-items-container">
+                                </div>
+                            
+                            <div class="cart-summary">
+                                <p>Tổng cộng: <span id="cart-total">0đ</span></p>
+                                <button class="btn-checkout-all">Thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu-container">
+                        <i class="fas fa-user-circle user-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="#">Thông tin</a></li>
+                            <li><a href="#">Đơn hàng</a></li>
+                            <li><a href="#" id="logout-link">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="product-info-container">
+            <hr>
+            <div class="product-name">
+                <h1>Laptop Lenovo ThinkPad L16 Gen 2 21SA000FVA</h1>
+            </div>
+            <hr>
+            <div class="product-info">
+                <div class="product-image">
+                    <img src="../../img/lenovo/lonovo9.webp" alt="">
+                </div>
+
+                <div class="product-details">
+                    <div class="product-price-container">
+                        <div class="price-info-wrapper">
+                            <div class="product-price">
+                                <p>Giá sản phẩm</p>
+                                <h3>19.999.999đ</h3>
+                                <i>24.999.999đ</i>
+                            </div>
+                        </div>
+
+                        <div class="product-buy-btn">
+                            <button class="buy-now-button">Mua Ngay</button>
+                        </div>
+                    </div>
+
+                    <table class="product-technical">
+                        <h2>Thông số kỹ thuật</h2>
+                        <tbody>
+                            <tr class="product-technical-item">
+                                <td>Loại CPU</td>
+                                <td>Intel Core Ultra 5 225U, 12 lõi (2P + 8E + 2LPE) / 14 luồng, Max Turbo up to 4.8GHz, 12MB</td>
+                            </tr>
+
+                            <tr class="product-technical-item">
+                                <td>Card đồ họa</td>
+                                <td>Intel Graphics</td>
+                            </tr>
+
+                            <tr class="product-technical-item">    
+                                <td>Hệ điều hành</td>
+                                <td>Windows 11 Home</td>
+                            </tr>
+
+                            <tr class="product-technical-item">
+                                <td>Dung lượng RAM</td>
+                                <td>16GB</td>
+                            </tr>
+
+                            <tr class="product-technical-item">
+                                <td>Loại RAM</td>
+                                <td>SO-DIMM DDR5-5600</td>
+                            </tr>
+
+                            <tr class="product-technical-item">    
+                                <td>Kích thước màn hình</td>
+                                <td>16 inches</td>
+                            </tr>
+
+                            <tr class="product-technical-item">    
+                                <td>Công nghệ màn hình</td>
+                                <td>
+                                    <p>Độ Sáng 300nits</p>
+                                    <br>
+                                    <p>Màn hình chống chói</p>
+                                    <br>
+                                    <p>Độ phủ màu 100% sRGB</p>
+                                </td>
+                            </tr>
+
+                            <tr class="product-technical-item">    
+                                <td>Độ phân giải</td>
+                                <td>1920 x 1200 pixels (WUXGA)</td>
+                            </tr>
+
+                            <tr class="product-technical-item">    
+                                <td>Pin</td>
+                                <td>
+                                    <p>57WH</p>
+                                    <br>
+                                    <p>Hỗ trợ sạc nhanh</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div id="footer">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <div class="logo-footer">
+                    <a href="#"><img src="../../img/logo.png" alt="Logo OLĐ"></a>
+                    <h3>OLDD - Chợ Đồ Cũ</h3>
+                </div>
+                <p>OLDD là nền tảng mua sắm đồ cũ uy tín. Chúng tôi mang đến giải pháp tiết kiệm và bền vững, cam kết chất lượng sản phẩm được kiểm định nghiêm ngặt.</p>
+                
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Thông tin</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Cửa hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Hỗ trợ khách hàng</h4>
+                <ul>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Phương thức thanh toán</a></li>
+                    <li><a href="#">Trung tâm hỗ trợ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-info">
+                <h4>Liên hệ với chúng tôi</h4>
+                <p>Địa chỉ: 02 Võ Oanh. Phường 25, Quận Bình Thạnh, TP.HCM</p>
+                <p>Điện thoại: 0392587154</p>
+                <p>Email: nambt7902@gmail.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-copyright">
+            <p>&copy; 2025 OLDD - Chợ Đồ Cũ. All rights reserved.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #4a80e0; 
+    --text-color-light: #fff;
+    --text-color-dark: #333;
+    --input-bg-color: #e6e6e6;
+    --input-border-radius: 5px;
+    --curve-radius: 250px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    max-width: 90%;
+    min-height: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    position: relative; 
+    background-color: var(--text-color-light); 
+}
+
+.form-container {
+    flex: 0 0 55%; 
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2; 
+    background-color: var(--text-color-light); 
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color-dark);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: none;
+    background-color: var(--input-bg-color);
+    border-radius: var(--input-border-radius);
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: var(--input-border-radius);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #3b6ac5;
+}
+
+.separator-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 25px 0 15px 0;
+}
+
+.social-login {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.social-login .social-icon:hover {
+    transform: translateY(-5px);
+    transition: all 180ms ease;;
+}
+
+.facebook-icon {
+    color: #1877f2;
+}
+
+.google-icon {
+    color: #db4437;
+}
+
+.welcome-container {
+    flex: 0 0 50%;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px;
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 1; 
+    border-radius: var(--curve-radius) 0 0 var(--curve-radius);
+    transform: translateX(10%); 
+    background-clip: padding-box;
+}
+
+
+.welcome-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.welcome-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.btn-secondary {
+    padding: 10px 30px;
+    background-color: transparent;
+    color: var(--text-color-light);
+    border: 2px solid var(--text-color-light);
+    border-radius: var(--input-border-radius);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.btn-secondary a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-secondary a:hover,
+.btn-secondary a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .form-container {
+        flex: none;
+        width: 100%;
+        padding: 30px 20px;
+        order: 1;
+    }
+    
+    .welcome-container {
+        position: relative;
+        width: 100%;
+        min-height: 200px;
+        order: 2;
+        transform: none;
+        border-radius: 0;
+    }
+}
