@@ -18,7 +18,7 @@ function getProductData() {
     
     return adminData.map(p => ({
         ...p,
-        img: p.img.startsWith('/') ? p.img : '/' + p.img.replace(/(\.\.\/)+/g, '')
+        img: p.img.replace(/(\.\.\/)+/g, '')
     }));
 }
 
@@ -294,4 +294,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.deleteCustomer = deleteCustomer;
 
     showSection('dashboard');
+
 });
